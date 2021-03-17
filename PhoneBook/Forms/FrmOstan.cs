@@ -1,5 +1,4 @@
-﻿using PhoneBook.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,25 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PhoneBook
+namespace PhoneBook.Forms
 {
-    public partial class FrmMain : Form
+    public partial class FrmOstan : Form
     {
-        public FrmMain()
+        public FrmOstan()
         {
             InitializeComponent();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void btnOstan_Click(object sender, EventArgs e)
-        {
-            var frm = new FrmOstan();
-            frm.ShowDialog();
-
+            this.Close();
         }
     }
 }

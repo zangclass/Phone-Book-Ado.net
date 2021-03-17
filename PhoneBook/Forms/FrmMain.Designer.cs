@@ -1,6 +1,6 @@
 ﻿namespace PhoneBook
 {
-    partial class Form1
+    partial class FrmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -87,6 +87,7 @@
             this.btnOstan.TabIndex = 3;
             this.btnOstan.Text = "استان";
             this.btnOstan.UseVisualStyleBackColor = false;
+            this.btnOstan.Click += new System.EventHandler(this.btnOstan_Click);
             // 
             // btnEdit
             // 
@@ -167,7 +168,7 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // Form1
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -185,7 +186,7 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
