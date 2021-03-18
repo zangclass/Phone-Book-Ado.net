@@ -35,5 +35,11 @@ namespace PhoneBook
         {
             BbInformation.ConnectionStringDatabase = "Server=.;Database=Daftarche Telephone;Trusted_Connection=True;";
         }
+
+        private void btnShahr_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmShahr();
+            frm.ShowDialog();
+        }
     }
 }

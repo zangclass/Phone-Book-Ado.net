@@ -74,6 +74,7 @@
             this.btnShahr.TabIndex = 2;
             this.btnShahr.Text = "شهر";
             this.btnShahr.UseVisualStyleBackColor = false;
+            this.btnShahr.Click += new System.EventHandler(this.btnShahr_Click);
             // 
             // btnOstan
             // 
