@@ -30,25 +30,49 @@ namespace PhoneBook.Repository
             com.ExecuteNonQuery();
             conn.Close();
         }
+        public void Edit(OstanEntity obj, int? id)
+        {
+            conn.Open();
+            SqlCommand com = new SqlCommand("dbo.Ostan_Excute", conn);
+            com.CommandType = CommandType.StoredProcedure;
 
-        public void Delete(int id)
+            com.Parameters.AddWithValue("@Kind", 2);
+            com.Parameters.AddWithValue("@NameOstan", obj.NameOstan);
+            com.Parameters.AddWithValue("@Id", id);
+
+            com.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void Delete(int? id)
+        {
+            conn.Open();
+            SqlCommand com = new SqlCommand("dbo.Ostan_Excute", conn);
+            com.CommandType = CommandType.StoredProcedure;
+
+            com.Parameters.AddWithValue("@Kind", 3);
+            com.Parameters.AddWithValue("@Id", id);
+
+            com.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public OstanEntity GetSingleEntity(int? id)
         {
             throw new NotImplementedException();
         }
-
-        public void Edit(OstanEntity obj, int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public DataTable GetEntitytList()
         {
-            throw new NotImplementedException();
+            conn.Open();
+            SqlDataAdapter ad = new SqlDataAdapter("dbo.Ostan_Query", conn);
+            ad.SelectCommand.CommandType = CommandType.StoredProcedure;
+            ad.SelectCommand.Parameters.AddWithValue("@Kind", 1);
+            var dt = new DataTable();
+            ad.Fill(dt);
+            conn.Close();
+            return dt;
         }
 
-        public OstanEntity GetSingleEntity(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

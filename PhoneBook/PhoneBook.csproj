@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Class\BbInformation.cs" />
     <Compile Include="Entity\OstanEntity.cs" />
+    <Compile Include="Entity\ShahrEntity.cs" />
     <Compile Include="Forms\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
