@@ -1,4 +1,5 @@
-﻿using PhoneBook.Forms;
+﻿using PhoneBook.Class;
+using PhoneBook.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,11 @@ namespace PhoneBook
             var frm = new FrmOstan();
             frm.ShowDialog();
 
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            BbInformation.ConnectionStringDatabase = "Server=.;Database=Daftarche Telephone;Trusted_Connection=True;";
         }
     }
 }

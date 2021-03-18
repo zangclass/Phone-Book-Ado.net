@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PhoneBook.Entity;
+using PhoneBook.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +22,21 @@ namespace PhoneBook.Forms
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("وارد نمودن نام استان الزامی می باشد.");
+                return;
+            }
+
+            OstanRepository rep = new OstanRepository();
+            rep.Add(new OstanEntity
+            {
+                NameOstan = textBox1.Text
+            }); 
         }
     }
 }
