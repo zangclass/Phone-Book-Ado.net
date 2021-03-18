@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.txtOstan = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +45,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtOstan);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -53,27 +53,24 @@
             this.panel1.Size = new System.Drawing.Size(357, 399);
             this.panel1.TabIndex = 0;
             // 
-            // textBox1
+            // dataGridView1
             // 
-            this.textBox1.Font = new System.Drawing.Font("B Mitra", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.textBox1.Location = new System.Drawing.Point(27, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 30);
-            this.textBox1.TabIndex = 0;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(27, 134);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(308, 237);
+            this.dataGridView1.TabIndex = 5;
             // 
-            // btnExit
+            // label1
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("B Medad", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(27, 83);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(95, 29);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "انصراف";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("B Medad", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(273, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 23);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "نام استان";
             // 
             // btnSave
             // 
@@ -89,24 +86,28 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label1
+            // btnExit
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("B Medad", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(273, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 23);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "نام استان";
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("B Medad", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(27, 83);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(95, 29);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.Text = "انصراف";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // dataGridView1
+            // txtOstan
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 134);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(308, 237);
-            this.dataGridView1.TabIndex = 5;
+            this.txtOstan.Font = new System.Drawing.Font("B Mitra", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txtOstan.Location = new System.Drawing.Point(27, 39);
+            this.txtOstan.Name = "txtOstan";
+            this.txtOstan.Size = new System.Drawing.Size(240, 30);
+            this.txtOstan.TabIndex = 0;
             // 
             // FrmOstan
             // 
@@ -130,7 +131,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtOstan;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label1;

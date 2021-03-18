@@ -26,7 +26,7 @@ namespace PhoneBook.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            if (string.IsNullOrWhiteSpace(txtOstan.Text))
             {
                 MessageBox.Show("وارد نمودن نام استان الزامی می باشد.");
                 return;
@@ -35,7 +35,7 @@ namespace PhoneBook.Forms
             OstanRepository rep = new OstanRepository();
             rep.Add(new OstanEntity
             {
-                NameOstan = textBox1.Text
+                NameOstan = txtOstan.Text
             }); 
         }
     }
