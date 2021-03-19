@@ -29,14 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboOstan = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.txtShahr = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboOstan = new System.Windows.Forms.ComboBox();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OstanId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameShahr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +62,28 @@
             this.panel1.Size = new System.Drawing.Size(349, 444);
             this.panel1.TabIndex = 1;
             // 
+            // comboOstan
+            // 
+            this.comboOstan.DisplayMember = "NameOstan";
+            this.comboOstan.Font = new System.Drawing.Font("B Mitra", 11.25F, System.Drawing.FontStyle.Bold);
+            this.comboOstan.FormattingEnabled = true;
+            this.comboOstan.Location = new System.Drawing.Point(21, 35);
+            this.comboOstan.Name = "comboOstan";
+            this.comboOstan.Size = new System.Drawing.Size(240, 31);
+            this.comboOstan.TabIndex = 8;
+            this.comboOstan.ValueMember = "Id";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("IRANSans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(267, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 24);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "نام استان";
+            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Teal;
@@ -71,14 +96,20 @@
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "حذف";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.OstanId,
+            this.NameShahr});
             this.dataGridView1.Location = new System.Drawing.Point(21, 187);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(308, 237);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
@@ -127,27 +158,26 @@
             this.txtShahr.Size = new System.Drawing.Size(240, 30);
             this.txtShahr.TabIndex = 0;
             // 
-            // label2
+            // Id
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("IRANSans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(267, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 24);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "نام استان";
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
             // 
-            // comboOstan
+            // OstanId
             // 
-            this.comboOstan.DisplayMember = "NameOstan";
-            this.comboOstan.Font = new System.Drawing.Font("B Mitra", 11.25F, System.Drawing.FontStyle.Bold);
-            this.comboOstan.FormattingEnabled = true;
-            this.comboOstan.Location = new System.Drawing.Point(21, 35);
-            this.comboOstan.Name = "comboOstan";
-            this.comboOstan.Size = new System.Drawing.Size(240, 31);
-            this.comboOstan.TabIndex = 8;
-            this.comboOstan.ValueMember = "Id";
+            this.OstanId.DataPropertyName = "OstanId";
+            this.OstanId.HeaderText = "OstanId";
+            this.OstanId.Name = "OstanId";
+            this.OstanId.Visible = false;
+            // 
+            // NameShahr
+            // 
+            this.NameShahr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NameShahr.DataPropertyName = "NameShahr";
+            this.NameShahr.HeaderText = "نام شهر";
+            this.NameShahr.Name = "NameShahr";
             // 
             // FrmShahr
             // 
@@ -180,5 +210,8 @@
         private System.Windows.Forms.TextBox txtShahr;
         private System.Windows.Forms.ComboBox comboOstan;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OstanId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameShahr;
     }
 }

@@ -32,19 +32,44 @@ namespace PhoneBook.Repository
             conn.Close();
         }
 
-        public void Delete(int? id)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Edit(ShahrEntity obj, int? id)
         {
-            throw new NotImplementedException();
+            conn.Open();
+            SqlCommand com = new SqlCommand("dbo.Shahr_Excute", conn);
+            com.CommandType = CommandType.StoredProcedure;
+
+            com.Parameters.AddWithValue("@Kind", 2);
+            com.Parameters.AddWithValue("@OstanId", obj.OstanId);
+            com.Parameters.AddWithValue("@NameShahr", obj.NameShahr);
+            com.Parameters.AddWithValue("@Id", id);
+
+            com.ExecuteNonQuery();
+            conn.Close();
         }
+        public void Delete(int? id)
+        {
+            conn.Open();
+            SqlCommand com = new SqlCommand("dbo.Shahr_Excute", conn);
+            com.CommandType = CommandType.StoredProcedure;
+
+            com.Parameters.AddWithValue("@Kind", 3);
+            com.Parameters.AddWithValue("@Id", id);
+
+            com.ExecuteNonQuery();
+            conn.Close();
+        }
+
 
         public DataTable GetEntitytList()
         {
-            throw new NotImplementedException();
+            conn.Open();
+            SqlDataAdapter ad = new SqlDataAdapter("dbo.Shahr_Query", conn);
+            ad.SelectCommand.CommandType = CommandType.StoredProcedure;
+            ad.SelectCommand.Parameters.AddWithValue("@Kind", 1);
+            var dt = new DataTable();
+            ad.Fill(dt);
+            conn.Close();
+            return dt;
         }
 
         public DataTable GetOstanList()
